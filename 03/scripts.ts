@@ -5,8 +5,12 @@ type Conn = {
     port: string,
     dbname: string
 }
+type conexao = {
+    driver: string,
+    url: string
+}
 
-const conexao = (dados: Conn) => {
+const conexao = (dados: Conn): Readonly<conexao> => {
     const { username, password, host, port, dbname } = dados;
     return {
         driver: 'postgres',

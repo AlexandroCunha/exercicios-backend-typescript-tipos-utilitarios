@@ -6,6 +6,9 @@ type Usuario = {
     dataNacimento?: string
 }
 
+type usuarioSemRg = Omit<Usuario, 'rg'>
+type usuarioObrigatorio = Required<usuarioSemRg>
+
 const cadastrarUsuário = (info: Usuario): Usuario => {
     return info;
 }
